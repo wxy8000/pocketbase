@@ -6,8 +6,3 @@ services:
     ports:
       - port: 8090
         type: http
-    mounts:
-      - dir: /pocketbase/pb_data
-        name: pocketbase_data
-      - dir: /pocketbase/pb_public
-        name: pocketbase_public
