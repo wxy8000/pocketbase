@@ -2,12 +2,12 @@ services:
   - type: web
     name: pocketbase
     runtime: docker
-    image: ghcr.io/pocketbase/pocketbase:latest
+    dockerfile: Dockerfile
     ports:
-      - port: 8080
+      - port: 8090
         type: http
     mounts:
-      - dir: /pb_data
+      - dir: /pocketbase/pb_data
         name: pocketbase_data
-      - dir: /pb_public
+      - dir: /pocketbase/pb_public
         name: pocketbase_public
