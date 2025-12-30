@@ -6,8 +6,10 @@ services:
     ports:
       - port: 8090
         type: http
+        expose: true
     mounts:
       - dir: /pb_data
         name: pocketbase_data
       - dir: /pb_public
         name: pocketbase_public
+    command: /app/pocketbase serve --http 0.0.0.0:8090
