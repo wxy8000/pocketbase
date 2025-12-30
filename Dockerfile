@@ -17,5 +17,8 @@ WORKDIR /pocketbase
 # 暴露端口
 EXPOSE 8090
 
-# 启动 PocketBase
-CMD ["./pocketbase", "serve", "--http", "0.0.0.0:8090"]
+# 启动脚本 - 重置数据库并启动
+CMD echo "Resetting PocketBase database..." && \
+    rm -rf /pocketbase/pb_data/* && \
+    echo "Database reset complete. Starting PocketBase..." && \
+    ./pocketbase serve --http 0.0.0.0:8090
