@@ -4,7 +4,7 @@ services:
     runtime: docker
     image: ghcr.io/pocketbase/pocketbase:latest
     ports:
-      - port: 8090
+      - port: 8080
         type: http
     mounts:
       - dir: /pb_data
