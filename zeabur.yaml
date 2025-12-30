@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pocketbase
+    runtime: docker
+    image: ghcr.io/muchobien/pocketbase:0.23
+    ports:
+      - port: 8090
+        type: http
+    mounts:
+      - dir: /pb_data
+        name: pocketbase_data
+      - dir: /pb_public
+        name: pocketbase_public
