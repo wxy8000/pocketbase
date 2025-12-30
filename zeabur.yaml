@@ -2,7 +2,7 @@ services:
   - type: web
     name: pocketbase
     runtime: docker
-    image: spectado/pocketbase:latest
+    image: ghcr.io/pocketbase/pocketbase:latest
     ports:
       - port: 8090
         type: http
@@ -11,3 +11,4 @@ services:
         name: pocketbase_data
       - dir: /pb_public
         name: pocketbase_public
+    command: "./pocketbase serve --http 0.0.0.0:8090"
